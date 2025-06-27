@@ -1,9 +1,7 @@
+import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "motion/react";
-
-import { useRef, useState } from "react";
-
 export const FloatingDock = ({
   items,
   desktopClassName,
@@ -16,7 +14,6 @@ export const FloatingDock = ({
     </>
   );
 };
-
 const FloatingDockMobile = ({
   items,
   className
@@ -48,15 +45,15 @@ const FloatingDockMobile = ({
                 {item.onClick ? (
                   <button
                     onClick={item.onClick}
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors">
+                    className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900 hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors">
                     <div className="h-4 w-4">{item.icon}</div>
                   </button>
                 ) : (
                   <a
                     href={item.href}
                     key={item.title}
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900">
-                    <div className="h-4 w-4">{item.icon}</div>
+                    className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900">
+                    <div className="h-6 w-6">{item.icon}</div>
                   </a>
                 )}
               </motion.div>
@@ -66,13 +63,12 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800">
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800">
+        <IconLayoutNavbarCollapse className="h-7 w-7 text-neutral-500 dark:text-neutral-400" />
       </button>
     </div>
   );
 };
-
 const FloatingDockDesktop = ({
   items,
   className
@@ -83,7 +79,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden h-12 items-end gap-4 rounded-lg bg-gray-50 px-4 pb-2   md:flex dark:bg-neutral-900",
+        "mx-auto hidden h-14 items-end gap-4 rounded-lg bg-gray-50 px-4 pb-2   md:flex dark:bg-neutral-900",
         className
       )}>
       {items.map((item) => (
@@ -92,7 +88,6 @@ const FloatingDockDesktop = ({
     </motion.div>
   );
 };
-
 function IconContainer({
   mouseX,
   title,
@@ -109,11 +104,11 @@ function IconContainer({
     return val - bounds.x - bounds.width / 2;
   });
 
-  let widthTransform = useTransform(distance, [-150, 0, 150], [32, 64, 32]);
-  let heightTransform = useTransform(distance, [-150, 0, 150], [32, 64, 32]);
+  let widthTransform = useTransform(distance, [-150, 0, 150], [40, 64, 40]);
+  let heightTransform = useTransform(distance, [-150, 0, 150], [40, 64, 40]);
 
-  let widthTransformIcon = useTransform(distance, [-150, 0, 150], [16, 32, 16]);
-  let heightTransformIcon = useTransform(distance, [-150, 0, 150], [16, 32, 16]);
+  let widthTransformIcon = useTransform(distance, [-150, 0, 150], [20, 32, 20]);
+  let heightTransformIcon = useTransform(distance, [-150, 0, 150], [20, 32, 20]);
 
   let width = useSpring(widthTransform, {
     mass: 0.1,

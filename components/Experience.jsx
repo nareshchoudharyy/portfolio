@@ -20,7 +20,7 @@ function ExperienceBox({ position, place, duration, description, technology }) {
                 </div>
                 <div className='text-sm'>{duration}</div>
             </div>
-            <div className="text-center md:text-justify max-w-prose text-zinc-700 dark:text-zinc-300 mb-2">
+            <div className="text-center md:text-justify text-zinc-700 dark:text-zinc-300 mb-2">
                 {description}
             </div>
             <div className='flex flex-wrap items-center justify-center md:justify-start gap-4'>

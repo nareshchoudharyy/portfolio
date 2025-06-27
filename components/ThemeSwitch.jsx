@@ -1,16 +1,10 @@
 import React from 'react'
 import { useTheme } from '@/context/ThemeContext'
-
 function ThemeSwitch({ onClick, className }) {
     const { darkMode } = useTheme();
-
     return (
         <div className={className}>
-            <button
-                type="button"
-                onClick={onClick}
-                className="rounded-full text-sm transition-all duration-200"
-            >
+            <button type="button" onClick={onClick} className="rounded-full text-sm transition-all duration-200">
                 {darkMode ? (
                     <>
                         <svg className="shrink-0 size-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

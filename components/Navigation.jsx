@@ -1,19 +1,10 @@
 "use client"
 import React from "react";
 import { FloatingDock } from "@/components/ui/floating-dock";
-import {
-    IconBrandGithub,
-    IconBrandLinkedin,
-    IconHome,
-    IconMoonFilled,
-    IconSunFilled,
-    IconTerminal2,
-} from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandLinkedin, IconHome, IconMoonFilled, IconSunFilled, IconTerminal2 } from "@tabler/icons-react";
 import { useTheme } from "@/context/ThemeContext";
-
 export function Navigation() {
     const { darkMode, toggleTheme } = useTheme();
-
     const links = [
         {
             title: "Home",
@@ -58,7 +49,6 @@ export function Navigation() {
             onClick: toggleTheme
         }
     ];
-
     return (
         <div className="fixed bottom-[20px] right-[20px] md:right-0 md:w-full md:flex md:items-center md:justify-center">
             <FloatingDock items={links} desktopClassName={'dark'} />
