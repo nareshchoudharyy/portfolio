@@ -1,8 +1,9 @@
 'use client'
 import React, { useState } from 'react'
-import { personalDetails } from '@/data'
+import { formUrl, personalDetails } from '@/data'
 import { Button } from './ui/stateful-button';
 import Link from 'next/link';
+import axios from 'axios';
 function GetInTouch() {
     const [formDetails, setFormDetails] = useState({});
     const handleFormDetails = (e) => {
