@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <ScrollProgress />
           <AuroraBg />
-          <div className="relative w-full md:w-[800px] mx-auto">
+          <div className="relative w-full md:w-[900px] mx-auto">
             {children}
             <Navigation />
           </div>
