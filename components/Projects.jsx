@@ -6,7 +6,7 @@ function Projects() {
     return (
         <div className="flex flex-col gap-[5px] mb-10 md:mb-20" id="projects">
             <h3 className="font-bold text-2xl mb-5">Projects</h3>
-            <BentoGrid className="max-w-4xl mx-auto overflow-hidden">
+            <BentoGrid className="mx-auto overflow-hidden">
                 {personalDetails.projects.map((item, i) => (
                     <BentoGridItem
                         key={i}
