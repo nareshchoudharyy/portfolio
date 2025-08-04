@@ -1,12 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* * {
-  cursor: none !important;
-} */
-/* to hide scroll bar */
 html,
 body {
+  user-select: none;
   overflow-y: scroll;
   scrollbar-width: none;
   scroll-behavior: smooth;
